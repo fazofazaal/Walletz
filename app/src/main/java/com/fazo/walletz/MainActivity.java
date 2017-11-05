@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
         Dashboard.OnFragmentInteractionListener,
         Expense.OnFragmentInteractionListener,
         Income.OnFragmentInteractionListener,
+        Converter.OnFragmentInteractionListener,
 
         NavigationView.OnNavigationItemSelectedListener {
 
@@ -96,8 +97,10 @@ public class MainActivity extends AppCompatActivity
             fragment = new Dashboard();
         } else if (id == R.id.nav_expense) {
             fragment = new Expense();
-        }else if (id == R.id.nav_income) {
+        } else if (id == R.id.nav_income) {
             fragment = new Income();
+        } else if (id == R.id.nav_converter) {
+            fragment = new Converter();
         }
 
         //NOTE: Fragment changing code
