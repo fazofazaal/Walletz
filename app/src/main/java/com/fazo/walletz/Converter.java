@@ -6,14 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 
-public class Income extends Fragment {
+public class Converter extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
 
-    public Income() {}
+    public Converter() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,11 +23,9 @@ public class Income extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (mListener != null) {
-            mListener.onFragmentInteraction("Income");
+            mListener.onFragmentInteraction("Currency Converter");
         }
-        return inflater.inflate(R.layout.fragment_income, container, false);
-
-        //Spinner categorySelect = (Spinner) findViewById(R.id.spinnerCategory);
+        return inflater.inflate(R.layout.fragment_converter, container, false);
     }
 
 

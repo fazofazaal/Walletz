@@ -57,7 +57,8 @@ public class Dashboard extends Fragment {
         mListener = null;
     }
 
-
+    //Be sure to add (implements) class.OnFragmentInteractionListener to implements in main activity
+    //or app will crash
     public interface OnFragmentInteractionListener {
         // NOTE : We changed the Uri to String.
         void onFragmentInteraction(String title);
