@@ -61,12 +61,14 @@ public class Income extends Fragment {
                 BalanceModel balance = new BalanceModel(amountDouble);
                 dbManager.createBalance(balance);
 
-                /*IncomeModel response = dbManager.getData();
+                IncomeModel response = dbManager.getData();
 
-                String tvValue = Double.toString(response.income_amount);
+                System.out.println("retreived="+response.getIncome_amount());
+                /*String tvValue = Double.toString(response.income_amount);
 
                 tv_test.setText(tvValue);*/
                 //updateBalance();
+
 
                 income_amount.setText("");
             }

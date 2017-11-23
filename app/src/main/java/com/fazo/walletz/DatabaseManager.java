@@ -97,11 +97,13 @@ public class DatabaseManager extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
 
             //Add values to the set
+
             values.put(KEY_INCOME_AMOUNT, incomeModel.getIncome_amount());
             values.put(KEY_CREATED_AT, getDateTime());
 
             // insert row
-            db.insert(TABLE_INCOME, null, values);
+            long rowInserted = db.insert(TABLE_INCOME, null, values);
+            System.out.println("ttestdsfs"+rowInserted);
             db.setTransactionSuccessful();
         } catch (Exception e) {
             Log.d(TAG, "Error while trying to add post to database");
@@ -152,7 +154,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
             values.put(KEY_CREATED_AT, getDateTime());
 
             //insert row
-            db.insert(TABLE_BALANCE, null, values);
+            long rowInserted = db.insert(TABLE_BALANCE, null, values);
+            System.out.println("ttestdsfs"+rowInserted);
             db.setTransactionSuccessful();
         } catch (Exception e) {
             Log.d(TAG, "Error while trying to add post to database");
@@ -165,10 +168,22 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public IncomeModel getData(){
         IncomeModel obj = new IncomeModel();
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1", null);
+        //Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1", null);
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_INCOME ,null);
+
         if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            obj.income_amount = cursor.getDouble(cursor.getColumnIndex(KEY_INCOME_AMOUNT));
+            System.out.println("test123456");
+            if(cursor.moveToLast())
+            {
+
+                System.out.println("test654321");
+                obj.income_amount = cursor.getDouble(cursor.getColumnIndex(KEY_INCOME_AMOUNT));
+                System.out.println("testtesttest");
+
+            }
+
+
         }
         cursor.close();
         return obj;
