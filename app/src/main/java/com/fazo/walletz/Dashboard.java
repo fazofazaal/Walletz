@@ -1,13 +1,21 @@
 package com.fazo.walletz;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import org.jetbrains.annotations.Nullable;
 
 public class Dashboard extends Fragment {
+
+    DatabaseManager dbManager;
+    TextView showBalance;
 
     // NOTE: Removed Some unwanted Boiler Plate Codes
     private OnFragmentInteractionListener mListener;
@@ -38,7 +46,20 @@ public class Dashboard extends Fragment {
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState ) {
+        super.onViewCreated(view, savedInstanceState);
+        dbManager = new DatabaseManager(getActivity());
+        showBalance = (TextView) view.findViewById(R.id.tvBalanceList);
 
+
+
+    }
+
+    /*public void updateBalance(){
+        String dbString = dbManager.balancetoString();
+        showBalance.setText(dbString);
+    }*/
 
     @Override
     public void onAttach(Context context) {

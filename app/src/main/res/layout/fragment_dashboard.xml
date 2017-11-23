@@ -65,10 +65,9 @@
         app:contentPadding="24dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvBalanceList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Card2"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 

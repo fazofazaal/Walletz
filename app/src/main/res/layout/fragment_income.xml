@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/iETAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Amount" />
@@ -32,6 +33,7 @@
 
         <Button
             android:id="@+id/buttonIncAdd"
+            android:onClick="ButtonincAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -41,6 +43,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
             app:layout_constraintVertical_bias="0.401"
             tools:layout_editor_absoluteX="124dp" />
+
+        <TextView
+            android:id="@+id/tvTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            app:layout_constraintBottom_toTopOf="@+id/buttonIncAdd"
+            tools:layout_editor_absoluteX="76dp" />
 
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>
