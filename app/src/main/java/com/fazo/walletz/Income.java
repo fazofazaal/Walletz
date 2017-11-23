@@ -68,7 +68,7 @@ public class Income extends Fragment {
                 tv_test.setText(tvValue);*/
                 //updateBalance();
 
-
+                income_amount.setText("");
             }
         });
 

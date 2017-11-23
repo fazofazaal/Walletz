@@ -63,12 +63,8 @@ public class Expense extends Fragment {
                 BalanceModel balance = new BalanceModel(amount);
                 dbManager.createBalance(balance);
 
-                /*BalanceModel balance = new BalanceModel();
-                balance.setExpense_amount(amountDouble);*/
-
-
-                /*expense_amount.setText("");
-                expense_cat.setText("");*/
+                expense_amount.setText("");
+                expense_cat.setText("");
             }
         });
 
