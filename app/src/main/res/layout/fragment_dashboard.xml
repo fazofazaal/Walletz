@@ -47,7 +47,7 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <!--<android.support.v7.widget.CardView
         android:id="@+id/cardViewOther"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -63,7 +63,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
 
-    </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>-->
 </LinearLayout>
 
 
@@ -71,43 +71,3 @@
 
 
 
-<!--android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_balance"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding=""
-    card_view:cardCornerRadius="2dp"
-    card_view:contentPadding="24dp">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/textViewBalance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:text="@string/balance"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textViewAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewBalance"
-            android:paddingBottom="16dp"
-            android:text="@string/balance_amount"
-            android:textSize="44sp" />
-
-        <TextView
-            android:id="@+id/textViewPercent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewAmount"
-            android:text="@string/balance_percentage"
-            android:textSize="24sp" />
-    </RelativeLayout>
-</android.support.v7.widget.CardView-->

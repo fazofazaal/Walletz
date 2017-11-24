@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nullable;
 public class Income extends Fragment {
 
     private DatabaseManager dbManager;
-    TextView tv_test;
     EditText income_amount;
 
     private OnFragmentInteractionListener mListener;

@@ -201,6 +201,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
                 System.out.println("exp654321");
                 obj.expense_amount = cursor.getDouble(cursor.getColumnIndex(KEY_EXPENSE_AMOUNT));
+                obj.category = cursor.getString(cursor.getColumnIndex(KEY_EXPENSE_CATEGORY));
                 System.out.println("expttesttest");
 
             }

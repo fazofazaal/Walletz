@@ -15,7 +15,6 @@ import org.jetbrains.annotations.Nullable;
 public class Dashboard extends Fragment {
 
     DatabaseManager dbManager;
-    TextView showBalance;
     TextView balanceAmount;
 
     // NOTE: Removed Some unwanted Boiler Plate Codes
@@ -53,16 +52,17 @@ public class Dashboard extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState ) {
         super.onViewCreated(view, savedInstanceState);
         dbManager = new DatabaseManager(getActivity());
-        showBalance = (TextView) view.findViewById(R.id.tvBalanceList);
+
         balanceAmount = (TextView) view.findViewById(R.id.textViewAmount);
 
-
+        //get balance data from database
         BalanceModel balance = dbManager.getBalData();
         String balupdated = Double.toString( balance.getBalance_amount() );
         System.out.println("retreived = "+balance.getBalance_amount());
 
 
         balanceAmount.setText(balupdated);
+
 
     }
 
