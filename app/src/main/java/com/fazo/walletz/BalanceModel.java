@@ -16,8 +16,8 @@ public class BalanceModel {
     public BalanceModel() {
     }
 
-    public BalanceModel(double income_amount) {
-        this.income_amount = income_amount;
+    public BalanceModel(double balance_amount) {
+        this.balance_amount = balance_amount;
     }
 
     public BalanceModel(String expense_amt) {
@@ -50,18 +50,19 @@ public class BalanceModel {
 
 
     //calculate balance
-    public double calcBalance(){
-        double incDef = 0;
-        double expDef = 0;
+    /*public double calcBalance(){
+       *//* double balCurrent = 1;
+        double incCurrent;
+        double expCurrent;
 
-        this.income_amount = incDef + this.income_amount;
-        incDef = this.income_amount;
+        incCurrent = balCurrent + this.income_amount;
+        balCurrent = incCurrent;
 
-        this.expense_amount = expDef + this.expense_amount;
-        expDef = this.expense_amount;
+        expCurrent = balCurrent - this.expense_amount;
+        balCurrent = expCurrent;
 
-        return incDef - expDef;
-    }
+        return balCurrent;*//*
+    }*/
 
 
     // getters
@@ -70,7 +71,7 @@ public class BalanceModel {
     }
 
     public double getBalance_amount() {
-        return calcBalance();
+        return this.balance_amount;
     }
 
     public String getCreatedAt() {

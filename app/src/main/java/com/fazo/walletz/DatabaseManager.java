@@ -150,7 +150,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
 
             //Add values to the set
-            values.put(KEY_BALANCE_AMOUNT, balanceModel.calcBalance());
+            values.put(KEY_BALANCE_AMOUNT, balanceModel.getBalance_amount());
             values.put(KEY_CREATED_AT, getDateTime());
 
             //insert row
@@ -165,7 +165,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     } //String selectQuery = "SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1";
 
-    public IncomeModel getData(){
+    public IncomeModel getIncData(){
         IncomeModel obj = new IncomeModel();
         SQLiteDatabase db = this.getWritableDatabase();
         //Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1", null);
@@ -182,13 +182,54 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 System.out.println("testtesttest");
 
             }
-
-
         }
         cursor.close();
         return obj;
     }
 
+    public ExpenseModel getExpData(){
+        ExpenseModel obj = new ExpenseModel();
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1", null);
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_EXPENSE ,null);
+
+        if (cursor.getCount() > 0) {
+            System.out.println("exp123456");
+            if(cursor.moveToLast())
+            {
+
+                System.out.println("exp654321");
+                obj.expense_amount = cursor.getDouble(cursor.getColumnIndex(KEY_EXPENSE_AMOUNT));
+                System.out.println("expttesttest");
+
+            }
+        }
+        cursor.close();
+        return obj;
+    }
+
+    public BalanceModel getBalData(){
+        BalanceModel obj = new BalanceModel();
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE + " ORDER BY "+ KEY_ID + "DESC LIMIT 1", null);
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BALANCE ,null);
+
+        if (cursor.getCount() > 0) {
+            System.out.println("bal123456");
+            if(cursor.moveToLast())
+            {
+
+                System.out.println("bal654321");
+                obj.balance_amount = cursor.getDouble(cursor.getColumnIndex(KEY_BALANCE_AMOUNT));
+                System.out.println("balttesttest");
+
+            }
+        }
+        cursor.close();
+        return obj;
+    }
 
     // closing database
     public void closeDB() {
