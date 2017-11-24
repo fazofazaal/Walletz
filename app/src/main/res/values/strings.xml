@@ -6,7 +6,6 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="balance">Balance</string>
-    <string name="balance_amount">150 RM</string>
-    <string name="balance_percentage">- 50%</string>
+    <string name="balance">Balance (RM)</string>
+    <string name="balance_amount">0</string>
 </resources>
