@@ -1,5 +1,6 @@
 package com.fazo.walletz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -82,6 +83,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            Intent getAbout = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(getAbout);
             return true;
         }
 
